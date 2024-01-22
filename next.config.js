@@ -1,9 +1,5 @@
 /** @type {import('next').NextConfig} */
 
-const cspHeader = `
-    upgrade-insecure-requests;
-`;
-
 const nextConfig = {
   reactStrictMode: true,
   images: {
@@ -25,7 +21,7 @@ const nextConfig = {
         headers: [
           {
             key: "Content-Security-Policy",
-            value: cspHeader.replace(/\n/g, ""),
+            value: upgrade - insecure - requests,
           },
         ],
       },
