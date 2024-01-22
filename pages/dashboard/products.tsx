@@ -1,7 +1,12 @@
 import Header from "@/components/header";
 import { PRODUCTS } from "@/data/products";
+import { Metadata } from "next";
 import Image from "next/image";
 import { BsPersonFill, BsThreeDotsVertical } from "react-icons/bs";
+
+export const metadata: Metadata = {
+  title: "Les productes",
+};
 
 const ProductsPage = () => {
   return (
@@ -17,10 +22,10 @@ const ProductsPage = () => {
             {PRODUCTS.map((product, id) => (
               <li
                 key={id}
-                className="bg-gray-50 hover:bg-gray-100 rounded-lg my-3 p-2 grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 items-center justify-between cursor-pointer"
+                className="bg-gray-100 hover:bg-gray-150 rounded-lg my-3 p-2 grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 items-center justify-between cursor-pointer"
               >
                 <div className="flex items-center">
-                  <div className="w-12 h-12">
+                  <div className="w-12">
                     <img src={product.img} alt="" />
                   </div>
                   <p className="pl-4">{product.name}</p>
