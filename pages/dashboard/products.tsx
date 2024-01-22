@@ -10,7 +10,7 @@ const ProductsPage = () => {
       <Head>
         <meta
           httpEquiv="Content-Security-Policy"
-          content="upgrade-insecure-requests"
+          content="upgrade-insecure-requestsx"
         />
       </Head>
       <Header title="Products" />
