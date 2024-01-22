@@ -1,3 +1,5 @@
+"use server";
+
 import Sidebar from "@/components/sidebar";
 import { Metadata } from "next";
 import { usePathname } from "next/navigation";
