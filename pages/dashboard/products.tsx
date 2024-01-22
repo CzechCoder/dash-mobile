@@ -20,7 +20,7 @@ const ProductsPage = () => {
                 className="bg-gray-50 hover:bg-gray-100 rounded-lg my-3 p-2 grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 items-center justify-between cursor-pointer"
               >
                 <div className="flex items-center">
-                  <div className="bg-black rounded-lg">
+                  <div className="w-12 h-12">
                     <img src={product.img} alt="" />
                   </div>
                   <p className="pl-4">{product.name}</p>
