@@ -1,12 +1,7 @@
 import Header from "@/components/header";
 import { PRODUCTS } from "@/data/products";
-import { Metadata } from "next";
 import Image from "next/image";
 import { BsPersonFill, BsThreeDotsVertical } from "react-icons/bs";
-
-export const metadata: Metadata = {
-  title: "Les productes",
-};
 
 const ProductsPage = () => {
   return (
