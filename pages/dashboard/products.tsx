@@ -1,11 +1,18 @@
 import Header from "@/components/header";
 import { PRODUCTS } from "@/data/products";
+import Head from "next/head";
 import Image from "next/image";
 import { BsPersonFill, BsThreeDotsVertical } from "react-icons/bs";
 
 const ProductsPage = () => {
   return (
     <div className="bg-gray-100 min-h-screen">
+      <Head>
+        <meta
+          httpEquiv="Content-Security-Policy"
+          content="upgrade-insecure-requests"
+        />
+      </Head>
       <Header title="Products" />
       <div className="p-4">
         <div className="w-full m-auto p-4 border rounded-lg bg-white overflow-y-auto">
