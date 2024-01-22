@@ -4,9 +4,12 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "http",
-        hostname: "tomasburian.com",
+        hostname: "www.shutterstock.com",
       },
+      // {
+      //   protocol: "http",
+      //   hostname: "tomasburian.com",
+      // },
     ],
   },
 };
