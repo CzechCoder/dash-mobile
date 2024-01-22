@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <meta
-          httpEquiv="Content-Security-Policy"
+          name="Content-Security-Policy"
           content="upgrade-insecure-requests"
         />
       </Head>
