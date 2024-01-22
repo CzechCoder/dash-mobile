@@ -21,7 +21,12 @@ const ProductsPage = () => {
               >
                 <div className="flex items-center">
                   <div className="bg-black rounded-lg">
-                    <Image src={product.img} width={40} height={40} alt="" />
+                    <Image
+                      src="https://as1.ftcdn.net/v2/jpg/02/94/77/04/500_F_294770424_28McL2coTqDN3kxWDNDLmCHTyl3e1UBu.jpg"
+                      width={40}
+                      height={40}
+                      alt=""
+                    />
                   </div>
                   <p className="pl-4">{product.name}</p>
                 </div>

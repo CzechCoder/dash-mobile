@@ -32,7 +32,7 @@ const Sidebar = ({ children }: { children: ReactElement }) => {
     <div className="flex">
       <div className="fixed w-20 h-screen p-4 bg-white border-r-[1px] flex flex-col justify-between z-50">
         <div className="flex flex-col items-center">
-          <Link href="/">
+          <Link href="/dashboard">
             <div className="inline-block">
               <Image src="/images/logo.jpg" alt="" width={50} height={50} />
             </div>
