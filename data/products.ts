@@ -10,7 +10,7 @@ export const PRODUCTS: Products[] = [
     id: 1,
     name: "Formula 1 car",
     stock: 124,
-    img: "https://images.pexels.com/photos/1484806/pexels-photo-1484806.jpeg?auto=compress&cs=tinysrgb&w=600",
+    img: "http://tomasburian.com/dev/cdn/mclaren-store/01.jpg",
   },
   {
     id: 2,

@@ -21,7 +21,7 @@ const OrdersPage = () => {
             {RECENT_ORDERS.map((order, id) => (
               <li
                 key={id}
-                className="bg-gray-50 hover:bg-gray-100 rounded-lg my-3 p-2 grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 items-center justify-between cursor-pointer"
+                className="bg-gray-100 hover:bg-gray-200 rounded-lg my-3 p-2 grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 items-center justify-between cursor-pointer"
               >
                 <div className="flex">
                   <div className="bg-purple-100 p-3 rounded-lg">
