@@ -1,3 +1,5 @@
+"use client";
+
 import Header from "@/components/header";
 import { PRODUCTS } from "@/data/products";
 import Image from "next/image";
