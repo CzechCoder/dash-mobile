@@ -2,16 +2,22 @@ import Link from "next/link";
 import React, { FC, ReactElement, ReactNode } from "react";
 import Image from "next/image";
 import { SIDERBAR_ITEMS } from "@/data/sidebar-items";
+import { useRouter } from "next/router";
 
 interface SidebarIcon {
   link: string;
   icon: ReactNode;
   tooltip: string;
+  currentPath: string;
 }
 
-const SidebarIcon: FC<SidebarIcon> = ({ link, icon, tooltip }) => (
+const SidebarIcon: FC<SidebarIcon> = ({ link, icon, tooltip, currentPath }) => (
   <Link href={link}>
-    <div className="sidebar-icon group">
+    <div
+      className={`sidebar-icon group ${
+        currentPath === link && "rounded-3xl bg-orange-500 text-white"
+      }`}
+    >
       {icon}
       <span className="sidebar-tooltip md:group-hover:scale-100 z-50">
         {tooltip}
@@ -21,6 +27,7 @@ const SidebarIcon: FC<SidebarIcon> = ({ link, icon, tooltip }) => (
 );
 
 const Sidebar = ({ children }: { children: ReactElement }) => {
+  const router = useRouter();
   return (
     <div className="flex">
       <div className="fixed w-20 h-screen p-4 bg-white border-r-[1px] flex flex-col justify-between z-50">
@@ -37,6 +44,7 @@ const Sidebar = ({ children }: { children: ReactElement }) => {
               link={item.link}
               icon={item.icon}
               tooltip={item.tooltip}
+              currentPath={router.pathname}
             />
           ))}
         </div>
