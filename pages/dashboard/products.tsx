@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+import Header from "@/components/header";
 import { PRODUCTS } from "@/data/products";
 import Image from "next/image";
 import { BsPersonFill, BsThreeDotsVertical } from "react-icons/bs";

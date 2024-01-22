@@ -1,5 +1,5 @@
 import { useSession } from "next-auth/react";
-import { redirect, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useCallback, useEffect } from "react";
 
 export default function Index() {
@@ -17,7 +17,7 @@ export default function Index() {
 
   useEffect(() => {
     redirect();
-  }, []);
+  }, [redirect]);
 
   return <></>;
 }

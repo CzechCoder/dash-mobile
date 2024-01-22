@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+import Header from "@/components/header";
 import BarChart from "@/components/bar-chart";
 import RecentOrders from "@/components/recent-orders";
 import TopCards from "@/components/top-cards";

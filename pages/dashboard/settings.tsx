@@ -1,6 +1,4 @@
-import Header from "@/components/Header";
-import { RECENT_ORDERS } from "@/data/recent-orders";
-import { BsPersonFill, BsThreeDotsVertical } from "react-icons/bs";
+import Header from "@/components/header";
 
 const SettingsPage = () => {
   return (
