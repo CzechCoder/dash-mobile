@@ -4,7 +4,9 @@ import { usePathname } from "next/navigation";
 import { ReactElement } from "react";
 
 export const metadata: Metadata = {
-  title: "De main page",
+  other: {
+    "Content-Security-Policy": "upgrade-insecure-requests",
+  },
 };
 
 const Layout = ({ children }: { children: ReactElement }) => {
