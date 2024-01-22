@@ -1,5 +1,3 @@
-"use client";
-
 import Header from "@/components/header";
 import { PRODUCTS } from "@/data/products";
 import Image from "next/image";
@@ -23,7 +21,7 @@ const ProductsPage = () => {
               >
                 <div className="flex items-center">
                   <div className="bg-black rounded-lg">
-                    <Image src={product.img} width={40} height={40} alt="" />
+                    <img src={product.img} alt="" />
                   </div>
                   <p className="pl-4">{product.name}</p>
                 </div>
