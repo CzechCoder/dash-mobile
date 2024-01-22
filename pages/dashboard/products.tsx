@@ -21,7 +21,7 @@ const ProductsPage = () => {
               >
                 <div className="flex items-center">
                   <div className="w-12">
-                    <img src={product.img} alt="" />
+                    <Image src={product.img} alt="" width={50} height={50} />
                   </div>
                   <p className="pl-4">{product.name}</p>
                 </div>
