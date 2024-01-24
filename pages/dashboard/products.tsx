@@ -29,12 +29,7 @@ const ProductsPage = () => {
               >
                 <div className="flex items-center">
                   <div className="w-12">
-                    <Image
-                      src="http:/tomasburian.com/dev/cdn/mclaren-store/01.jpg"
-                      alt=""
-                      width={50}
-                      height={50}
-                    />
+                    <Image src={product.img} alt="" width={50} height={50} />
                   </div>
                   <p className="pl-4">{product.title}</p>
                 </div>
