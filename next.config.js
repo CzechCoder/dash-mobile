@@ -16,10 +16,6 @@ const nextConfig = {
         port: "",
         pathname: "**",
       },
-      // {
-      //   protocol: "http",
-      //   hostname: "tomasburian.com",
-      // },
     ],
   },
 };
