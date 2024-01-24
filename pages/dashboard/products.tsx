@@ -1,5 +1,5 @@
 import Header from "@/components/header";
-import { getProducts } from "@/pages/lib/dataTransfer";
+import { getProducts } from "@/lib/dataTransfer";
 import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import { BsPersonFill, BsThreeDotsVertical } from "react-icons/bs";

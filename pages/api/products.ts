@@ -1,7 +1,7 @@
 import { type NextApiHandler } from "next";
-import { connectDb } from "../lib/connectDb";
+import { connectDb } from "../../lib/connectDb";
 import { Product as ProductModel } from "@/models/product";
-import { Product } from "../lib/types";
+import { Product } from "../../lib/types";
 
 const productsHandler: NextApiHandler = (req, res) => {
   if (req.method === "GET") {

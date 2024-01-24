@@ -1,7 +1,7 @@
 import { revalidatePath } from "next/cache";
 import { Product } from "../../models/product";
 import { redirect } from "next/navigation";
-import { connectDb } from "../lib/connectDb";
+import { connectDb } from "../../lib/connectDb";
 
 // GET
 
