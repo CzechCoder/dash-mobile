@@ -27,6 +27,6 @@
       );
     background-color: #131313;
     background-size: 20px 20px;
-    @apply h-screen flex flex-col md:flex-row justify-center space-y-10 md:space-y-0 md:space-x-16 items-center my-2 mx-5 md:mx-0 md:my-0;
+    @apply h-screen flex flex-col md:flex-row justify-center space-y-10 md:space-y-0 md:space-x-16 items-center py-2 px-5 md:px-0 md:py-0;
   }
 }

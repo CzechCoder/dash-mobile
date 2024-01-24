@@ -9,7 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.17.19",
+    "axios": "^1.6.5",
     "chart.js": "^4.4.1",
+    "mongoose": "^8.1.0",
     "next": "14.0.4",
     "next-auth": "^4.24.5",
     "react": "^18",
