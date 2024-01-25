@@ -1,43 +1,26 @@
+import { Product as ProductType } from "@/lib/types";
 import { Schema, model, models } from "mongoose";
 
-interface Product {
-  title: string;
-  desc: string;
-  price: number;
-  stock: number;
-  img: string;
-  color: string;
-  size: string;
-}
-
-const productSchema = new Schema<Product>(
+const productSchema = new Schema<ProductType>(
   {
-    title: {
+    name: {
       type: String,
       required: true,
       unique: true,
     },
-    desc: {
+    price: {
       type: String,
       required: true,
-    },
-    price: {
-      type: Number,
-      required: true,
-      min: 0,
     },
     stock: {
-      type: Number,
+      type: String,
       required: true,
-      min: 0,
+    },
+    available: {
+      type: Boolean,
+      default: true,
     },
     img: {
-      type: String,
-    },
-    color: {
-      type: String,
-    },
-    size: {
       type: String,
     },
   },
@@ -45,4 +28,4 @@ const productSchema = new Schema<Product>(
 );
 
 export const Product =
-  models?.Product || model<Product>("Product", productSchema);
+  models?.Product || model<ProductType>("Product", productSchema);

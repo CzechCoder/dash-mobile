@@ -1,93 +1,74 @@
-import { revalidatePath } from "next/cache";
-import { Product } from "../../models/product";
-import { redirect } from "next/navigation";
+import { Product as ProductModel } from "../../models/product";
 import { connectDb } from "../../lib/connectDb";
+import { NextApiHandler } from "next";
+import { Product } from "@/lib/types";
 
-// GET
-
-export const getProduct = async (_id: string) => {
-  try {
-    connectDb();
-    const product = await Product.findById(_id);
-    return product;
-  } catch (error) {
-    console.log(error);
-    throw new Error("Failed to fetch products");
-  }
+const productHandler: NextApiHandler = (req, res) => {
+  if (req.method === "POST") {
+    addProduct(req, res);
+  } else if (req.method === "PATCH") {
+    updateProduct(req, res);
+  } else return;
 };
+
+export default productHandler;
 
 // UPDATE
 
-export const updateProduct = async (
-  formData: Iterable<readonly [PropertyKey, any]>
-) => {
-  const { _id, title, desc, price, stock, color, size } =
-    Object.fromEntries(formData);
+export const updateProduct: NextApiHandler = async (req, res) => {
+  const { _id, name, price, stock, available } = req.body;
 
   try {
     connectDb();
-    const updateFields: { [key: string]: string } = {
-      title,
-      desc,
+    const updateFields: { [key: string]: string | boolean } = {
+      name,
       price,
       stock,
-      color,
-      size,
+      available,
     };
 
-    Object.keys(updateFields).forEach(
-      (key) =>
-        (updateFields[key] === "" || undefined) && delete updateFields[key]
-    );
+    //   Object.keys(updateFields).forEach(
+    //     (key) =>
+    //       (updateFields[key] === "" || undefined) && delete updateFields[key]
+    //   );
 
-    await Product.findByIdAndUpdate(_id, updateFields);
+    await ProductModel.findByIdAndUpdate(_id, updateFields);
   } catch (error) {
     console.log(error);
     throw new Error("Failed to update the product");
   }
-
-  revalidatePath("/dashboard/product");
-  redirect("/dashboard/products");
 };
 
-// ADD
+// ADD - POST
 
-export const addProduct = async (
-  formData: Iterable<readonly [PropertyKey, any]>
-) => {
-  const { title, desc, price, stock, color, size } =
-    Object.fromEntries(formData);
-
+export const addProduct: NextApiHandler<Product> = async (req, res) => {
   try {
     connectDb();
 
-    const newProduct = new Product({ title, desc, price, stock, color, size });
+    const newProduct = new ProductModel(req.body);
+
+    console.log("New product on API:");
+    console.log(newProduct);
 
     await newProduct.save();
   } catch (error) {
     console.log(error);
     throw new Error("Failed to create a new product");
   }
-
-  revalidatePath("/dashboard/products");
-  redirect("/dashboard/products");
 };
 
 // DELETE
 
-export const deleteProduct = async (
-  formData: Iterable<readonly [PropertyKey, any]>
-) => {
-  const { id } = Object.fromEntries(formData);
+// export const deleteProduct = async (
+//   formData: Iterable<readonly [PropertyKey, any]>
+// ) => {
+//   const { id } = Object.fromEntries(formData);
 
-  try {
-    connectDb();
-    await Product.findByIdAndDelete(id);
-  } catch (error) {
-    console.log(error);
-    throw new Error("Failed to delete a product");
-  }
-
-  revalidatePath("/dashboard/products");
-  redirect("/dashboard/products");
-};
+//   try {
+//     connectDb();
+//     await ProductModel.findByIdAndDelete(id);
+//   } catch (error) {
+//     console.log(error);
+//     throw new Error("Failed to delete a product");
+//   }
+// };
